@@ -14,3 +14,5 @@
 /log/*.log
 /tmp
 nbproject
+bible-notes.sublime*
+config/database.yml
