@@ -1,0 +1,20 @@
+development:
+  adapter: mysql
+  database: bbn_app_dev
+  username: bible
+  password: bible
+  encoding: utf8
+
+test:
+  adapter: mysql
+  database: bbn_app_test
+  username: bible
+  password: bible
+  encoding: utf8
+
+production:
+  adapter: mysql
+  database: bbn_app
+  username: bible
+  password: bible
+  encoding: utf8
