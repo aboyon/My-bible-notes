@@ -1,0 +1,8 @@
+production:
+  BIBLESEARCH_API_KEY: 'your-key-here'
+
+development:
+  BIBLESEARCH_API_KEY: 'your-key-here'
+
+test:
+  BIBLESEARCH_API_KEY: 'your-key-here'

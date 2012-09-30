@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,8 +40,7 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(params[:note])
-
+    @note = current_user.notes.create(params[:note]);
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }

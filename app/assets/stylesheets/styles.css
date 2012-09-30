@@ -1,0 +1,26 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.dashboard-add-new-note {
+	display: block;
+	width:45%;
+	float: left;
+}
+
+.dashboard-my-notes h4 {
+	text-align: right;
+}
+
+.note-comment {
+	height:200px;
+}
+
+.field input[type="checkbox"]{
+	margin-top:10px;
+}
+
+.hidden {
+	display:none;
+}

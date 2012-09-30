@@ -4,15 +4,13 @@ RailsApp::Application.routes.draw do
 
   devise_for :users
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  root :to => "home#index"
-
   match 'about' => "static#about"
   match 'statement' => "static#statement"
   match 'contact' => "static#contact"
   match 'team' => "static#team"
   match 'dashboard' => "users#dashboard"
+  match 'verse/search' => "verse#search"
+
+  root :to => "home#index"
 
 end
