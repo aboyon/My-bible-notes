@@ -24,3 +24,7 @@ body {
 .hidden {
 	display:none;
 }
+
+.field {
+	margin-top:20px;
+}
