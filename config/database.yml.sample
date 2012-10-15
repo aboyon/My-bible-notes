@@ -4,6 +4,7 @@ development:
   username: bible
   password: bible
   encoding: utf8
+  host: localhost
 
 test:
   adapter: mysql
@@ -11,6 +12,7 @@ test:
   username: bible
   password: bible
   encoding: utf8
+  host: localhost
 
 production:
   adapter: mysql
@@ -18,3 +20,4 @@ production:
   username: bible
   password: bible
   encoding: utf8
+  host: localhost
