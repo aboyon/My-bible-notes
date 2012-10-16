@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
+gem "activerecord-postgresql-adapter", "~> 0.0.1"
 # gem 'sqlite3'
 
 gem 'jquery-rails'

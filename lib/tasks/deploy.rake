@@ -4,12 +4,6 @@ require 'yaml'
 
 namespace :heroku do
 
-	desc "Regenerate configuration files"
-	task :reload do
-	    puts "Reloading configuration"
-	    File.link("#{Rails.root}/config/database.yml.sample", "#{Rails.root}/config/database.yml")
-	end
-
 	desc "Migrate databases in heroku"
 	task :migrate do
 	    puts "migrating database..."
