@@ -15,5 +15,5 @@
 /tmp
 nbproject
 bible-notes.sublime*
-config/database.yml
-app/config/config.yml
+# config/database.yml
+# app/config/config.yml

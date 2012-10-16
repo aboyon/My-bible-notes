@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  database: bbn_app_dev
+  username: bible
+  password: bible
+  encoding: utf8
+  host: localhost
+
+test:
+  adapter: mysql
+  database: bbn_app_test
+  username: bible
+  password: bible
+  encoding: utf8
+  host: localhost
+
+production:
+  adapter: ENV['DB_ADAPTER']
+  database: ENV['DB_NAME']
+  username: ENV['DB_USERNAME']
+  password: ENV['DB_PASSWORD']
+  encoding: utf8
+  host: ENV['DB_HOST']
