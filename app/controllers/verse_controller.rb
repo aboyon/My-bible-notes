@@ -15,7 +15,7 @@ class VerseController < ApplicationController
 				@response = {:error => 'Verse or passage not found'}
 			end				
 		else
-			@response = {:error => 'An error ocurred'}
+			@response = {:error => 'An error ocurred', :message => raw_response.body}
 		end
 		
 		respond_to do |format|

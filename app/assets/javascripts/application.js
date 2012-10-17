@@ -16,9 +16,15 @@ $().ready(function(){
 				version: $('button.active')[0].innerHTML
 			}, function(r){
 				$('.search-verse').html('Search!').attr({disabled: false});
-				$('.passage_holder').html(r.result[0].passages[0].passage[0].text_preview);
-				$('.hidden').show();
-				$('input[type="submit"]').attr({disabled: false});
+				if (typeof r.result[0].passages[0].passage == 'undefined') {
+					$('.passage_holder').html('Sorry, but cannot find the verse you\'ve entered')
+						.addClass('error');
+					$('.verse-to-search').val('');
+				} else {
+					$('.passage_holder').html(r.result[0].passages[0].passage[0].text_preview);
+					$('.hidden').show();
+					$('input[type="submit"]').attr({disabled: false});
+				}
 			},'json');
 		});
 		$('.btn-group').button()
