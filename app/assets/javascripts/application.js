@@ -26,8 +26,9 @@ $().ready(function(){
 							.addClass('error');
 						$('.verse-to-search').val('');
 					} else {
+						$('#note_verse').val(r.result[0].passages[0].passage[0].text_preview);
 						$('.passage_holder').html(r.result[0].passages[0].passage[0].text_preview);
-						$('.hidden').show();
+						$('.hidden').css({visibility:'visible'}).show();
 						$('input[type="submit"]').attr({disabled: false});
 					}
 				}
