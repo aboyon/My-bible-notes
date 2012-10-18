@@ -6,7 +6,7 @@ class VerseController < ApplicationController
 			"https://m.es.bibles.org/passages.xml?q[]=#{params[:criteria].gsub(' ','%20')}&version=#{params[:version]}",
 			:follow_location => true, 
 			:ssl_verifyhost => false, 
-			:username => "#{APP_CONFIG['BIBLESEARCH_API_KEY']}",
+			:username => APP_CONFIG['BIBLESEARCH_API_KEY'],
 			:password => 'X'
 		)
 		if (raw_response.success?)
