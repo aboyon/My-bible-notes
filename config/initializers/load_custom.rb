@@ -4,4 +4,4 @@ require 'xmlsimple'
 require 'typhoeus'
 
 # getting configuration file
-APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[ENV["RAILS_ENV"]]
+APP_CONFIG = YAML.load(ERB.new(File.read("#{Rails.root}/config/config.yml")).result)[Rails.env]
