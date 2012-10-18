@@ -8,6 +8,8 @@ gem 'sass-rails', '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'uglifier', '>= 1.0.3'
+gem 'execjs' 
+gem 'therubyracer' 
 
 # database adapters, :ps => is required to keep $0.00 database support in heroku 
 gem 'mysql'
