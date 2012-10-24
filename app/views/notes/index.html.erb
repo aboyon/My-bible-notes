@@ -1,27 +1,21 @@
 <h1>Listing notes</h1>
 
-<table>
-  <tr>
-    <th>Passage</th>
-    <th>Comment</th>
-    <th>User</th>
-    <th>Public</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="row show-grid">
 <% @notes.each do |note| %>
-  <tr>
-    <td><%= note.passage %></td>
-    <td><%= note.comment %></td>
-    <td><%= note.user_id %></td>
-    <td><%= note.public %></td>
-    <td><%= link_to 'Show', note %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
-    <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="span4 block">
+    <h3><%= note.passage %></h3>
+    <p><%= note.comment %></p>
+    <div class="btn-group">
+      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+        do the following
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Read complete', note %></li>
+        <li><%= link_to 'Change my comment', edit_note_path(note) %></li>
+        <li><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </div>
+  </div>
 <% end %>
-</table>
-
-<br />
+</div>

@@ -28,3 +28,14 @@ body {
 .field {
 	margin-top:20px;
 }
+
+.show-grid .block {
+	background-color: #EEE;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding:5px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
