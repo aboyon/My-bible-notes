@@ -15,9 +15,9 @@ test:
   host: localhost
 
 production:
-  adapter: ENV['DB_ADAPTER']
-  database: ENV['DB_NAME']
-  username: ENV['DB_USERNAME']
-  password: ENV['DB_PASSWORD']
+  adapter: <%= ENV['DB_ADAPTER'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
-  host: ENV['DB_HOST']
+  host: <%= ENV['DB_HOST'] %>

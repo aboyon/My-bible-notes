@@ -1,8 +1,8 @@
 <h1>Listing notes</h1>
 
-<div class="row show-grid">
+<div class="row-fluid show-grid">
 <% @notes.each do |note| %>
-  <div class="span4 block">
+  <div class="span3 block">
     <h3><%= note.passage %></h3>
     <p><%= note.comment %></p>
     <div class="btn-group">

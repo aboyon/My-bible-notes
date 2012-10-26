@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Passage:</b>
-  <%= @note.passage %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= @note.comment %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @note.user_id %>
-</p>
-
-<p>
-  <b>Public:</b>
-  <%= @note.public %>
-</p>
-
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<legend>
+	<%= @note.passage %>
+	<%= link_to 'Change', edit_note_path(@note), :class => 'btn btn-info float-right' %>
+	<%= link_to 'Back', notes_path, :class => 'btn btn-inverse float-right' %>
+</legend>
+<div class="row-fluid show-grid">
+	<div class="span6">
+	<span class="label label-<%= @note.is_public? ? 'info' : 'success' %>">this note is <%= @note.is_public? ? 'public' : 'private' %></span>
+	<p>
+	  <%= @note.comment %>
+	</p>
+	</div>
+</div>

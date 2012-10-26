@@ -38,4 +38,10 @@ body {
 	float: left;
 	margin-left: 10px;
 	margin-bottom: 10px;
+	min-height: 130px;
+}
+
+.float-right {
+	float: right;
+	margin-left:10px;
 }
