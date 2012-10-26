@@ -1,15 +1,23 @@
-<p id="notice"><%= notice %></p>
-
+<%= form_tag(note_path(@note), :method => "delete") %>
 <legend>
-	<%= @note.passage %>
-	<%= link_to 'Change', edit_note_path(@note), :class => 'btn btn-info float-right' %>
-	<%= link_to 'Back', notes_path, :class => 'btn btn-inverse float-right' %>
+	<i class="icon-file"></i><%= @note.passage %>
+	<span class="label label-<%= @note.public? ? 'info' : 'success' %>"><%= @note.public? ? 'PUBLIC' : 'PRIVATE' %></span> 
+	<input type="submit" value="Delete" class="btn btn-danger float-right" />
+	<%= link_to 'Change', edit_note_path(@note), :class => 'btn float-right' %>
+	<%= link_to 'Back', notes_path, :class => 'btn float-right' %>
 </legend>
+</form>
+
 <div class="row-fluid show-grid">
 	<div class="span6">
-	<span class="label label-<%= @note.is_public? ? 'info' : 'success' %>">this note is <%= @note.is_public? ? 'public' : 'private' %></span>
 	<p>
 	  <%= @note.comment %>
 	</p>
+	</div>
+	<div class="span6 well">
+	<blockquote class="pull-right">
+	  <%= raw @note.verse %>
+	  <small><cite title="<%= @note.passage %>"><%= @note.passage %></cite></small>
+	</blockquote>
 	</div>
 </div>

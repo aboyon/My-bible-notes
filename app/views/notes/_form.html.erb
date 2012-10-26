@@ -1,36 +1,31 @@
 <%= form_for(@note) do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+    <% if @note.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
 
-      <ul>
-      <% @note.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% if @note.new_record? %>
+    <%= render 'notes/search_verse', :f => f %>
   <% end %>
-  <div class="input-append field">
-    <%= f.text_field :passage, :class => 'span4 verse-to-search', :placeholder => 'e.g: Acts 1:8 or John 3:16-20' %>
-    <button class="btn search-verse" type="button">Search!</button>
-  </div>
-  <div class="field">
-    <div class="btn-group" data-toggle="buttons-radio">
-      <button type="button" class="btn version active">RVR60</button>
-      <button type="button" class="btn version">KJVA</button>
-      <button type="button" class="btn version">GNT</button>
-      <button type="button" class="btn version">CEV</button>
+    <%= f.hidden_field :verse %>
+    <div class="field <%= @note.new_record? ? :hidden:'' %>">
+    <% if @note.new_record? %>
+      <%= f.text_area :comment, :class => 'span4 note-comment', :placeholder => 'Enter your comment here'%>
+    <% else %>
+      <%= f.text_area :comment, :class => 'span12 note-comment', :placeholder => 'Enter your comment here'%>
+    <% end %>
     </div>
-  </div>
-  <%= f.hidden_field :verse %>
-  <div class="field hidden">
-    <%= f.text_area :comment, :class => 'span4 note-comment', :placeholder => 'Enter your comment here'%>
-  </div>
-  <div class="field hidden">
-    <%= f.label :public %> <%= f.check_box :public %>
-  </div>
+    <div class="field  <%= @note.new_record? ? :hidden:'' %>">
+      <%= f.label :public %> <%= f.check_box :public %>
+    </div>
 
-  <div class="actions hidden">
-    <%= f.submit :class => 'btn save', :disabled => true %>
-  </div>
+    <div class="actions <%= @note.new_record? ? :hidden:'' %>">
+      <%= f.submit :class => 'btn btn-large btn-block btn-info save', :disabled => @note.new_record? %>
+    </div>
 <% end %>

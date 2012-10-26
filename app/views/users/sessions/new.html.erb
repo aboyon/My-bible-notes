@@ -1,17 +1,21 @@
-<h2>Sign in</h2>
-
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in", :class => 'btn btn-primary' %></div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div class="row-fluid show-grid">
+	<div class="span6">
+		<legend>Sign in</legend>
+		<div class="well centered">
+			<%= render 'form' %>
+		</div>
+	</div>
+	<div class="span6">
+		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
+		<legend>Don't have an account yet?</legend>
+		  <p>Is free and easy to do, complete only a few steps and that's it.</p>
+		  <%= link_to "Create an account", new_registration_path(resource_name), :class => 'btn btn-large btn-success' %><br />
+		<% end %>
+		<p>&nbsp;</p>
+		<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+		<legend>I have an account but don't remember my password</legend>
+		<p>Don't worry! these are common problems, and we know it. Because of that we give you an easy way to recover your users credentials.</p>
+		  <%= link_to "Recorver your password!", new_password_path(resource_name), :class => 'btn btn-large btn-info' %><br />
+		<% end -%>
+	</div>
+</div>

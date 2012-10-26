@@ -1,6 +1,12 @@
-<h1>Editing note</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+<legend>Modifying notes on <b><%= @note.passage %></b>, taken on <%= @note.created_at.to_formatted_s(:long_ordinal) %></legend>
+<div class="row-fluid show-grid">
+	<div class="span6">
+	<blockquote>
+	  <%= raw @note.verse %>
+	  <small><cite title="<%= @note.passage %>"><%= @note.passage %></cite></small>
+	</blockquote>
+	</div>
+	<div class="span6">
+		<%= render 'form' %>
+	</div>
+</div>

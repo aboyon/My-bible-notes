@@ -21,11 +21,17 @@
 <% end %>
 <div class="container">
 <% if (notice!= nil) %>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
   <%= notice %>
+</div>
 <% end %>
 
 <% if (alert!= nil) %>
-  <%= alert %>
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Warning!</strong> <%= alert %>
+</div>
 <% end %>
 
 <%= yield %>
