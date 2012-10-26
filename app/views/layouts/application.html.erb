@@ -35,6 +35,11 @@
 <% end %>
 
 <%= yield %>
+
+<footer>
+  <hr>
+  <%= Time.now.year %>, Bible notes (beta 0.1) <%= link_to 'see developer notes', 'https://github.com/aboyon/My-bible-notes', :target => '_blank' %>
+</footer>
 </div>
 </body>
 </html>
